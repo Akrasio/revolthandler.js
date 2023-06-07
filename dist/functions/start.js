@@ -34,7 +34,7 @@ function start(prop, handlerClient) {
     }
     prop.client.on("message", (message) => {
       let owners = prop.owners;
-      if (prop.client.users.get(message.author_id).bot || message.system)
+      if (prop.client.users.get(message.author.id).bot || message.system)
         return;
       if (message.content.type) return;
       revoltHandler(message, prop.client, handlerClient, owners, prop.prefix);
